@@ -172,9 +172,9 @@ Free $0 - Starter $5/mo - Pro $19/mo - Accelerator $134/mo - Studio $200/mo. Eac
 | 106 | DeployCheck | Accelerator |
 | 107 | DesignHandoff | Accelerator |
 | 108 | Diff Docket | Accelerator |
-| 109 | Release Radar | Accelerator |
+| 109 | Print Perfect | Accelerator |
 | 110 | Rewrite Route | Accelerator |
-| 111 | Redirect Route | Accelerator |
+| 111 | Table Siphon | Accelerator |
 | 112 | Runtime Radar | Accelerator |
 | 113 | StackNote | Accelerator |
 | 114 | Perf Ledger | Accelerator |
@@ -184,7 +184,7 @@ Free $0 - Starter $5/mo - Pro $19/mo - Accelerator $134/mo - Studio $200/mo. Eac
 | 118 | CSS Inspector | Accelerator |
 | 119 | CSSPulse | Accelerator |
 | 120 | FontField | Accelerator |
-| 121 | ColorToken | Accelerator |
+| 121 | Video Speed Deck | Accelerator |
 | 122 | ViewportNote | Accelerator |
 | 123 | Form Map | Accelerator |
 | 124 | FormFlow | Accelerator |
@@ -196,10 +196,10 @@ Free $0 - Starter $5/mo - Pro $19/mo - Accelerator $134/mo - Studio $200/mo. Eac
 | 130 | Focus Ring | Accelerator |
 | 131 | Heading Guide | Accelerator |
 | 132 | Landmark Lens | Accelerator |
-| 133 | ImageAlt Check | Accelerator |
+| 133 | Emoji Chest | Accelerator |
 | 134 | Alt Text Desk | Accelerator |
 | 135 | A11yCoach | Accelerator |
-| 136 | Cookie Ledger | Accelerator |
+| 136 | Tab Snooze | Accelerator |
 | 137 | Cookie Purpose | Accelerator |
 | 138 | CookieCheck Lite | Accelerator |
 | 139 | Consent Map | Accelerator |
@@ -207,7 +207,7 @@ Free $0 - Starter $5/mo - Pro $19/mo - Accelerator $134/mo - Studio $200/mo. Eac
 | 141 | Privacy Brief | Accelerator |
 | 142 | Permission Pilot | Accelerator |
 | 143 | Permission Watch | Accelerator |
-| 144 | PermissionProof | Accelerator |
+| 144 | Highlight Reel | Accelerator |
 | 145 | Login Ledger | Accelerator |
 | 146 | PhishPhrase | Accelerator |
 | 147 | Link Shield | Accelerator |
@@ -221,7 +221,7 @@ Free $0 - Starter $5/mo - Pro $19/mo - Accelerator $134/mo - Studio $200/mo. Eac
 | 155 | Index Check | Accelerator |
 | 156 | SEO Signal | Accelerator |
 | 157 | Meta Memo | Accelerator |
-| 158 | Schema Cue | Accelerator |
+| 158 | Font Spotter | Accelerator |
 | 159 | Schema Sketch | Accelerator |
 | 160 | TableTrace | Accelerator |
 | 161 | Click Plan | Accelerator |
@@ -314,12 +314,12 @@ Free $0 - Starter $5/mo - Pro $19/mo - Accelerator $134/mo - Studio $200/mo. Eac
 | 248 | ReadingTimer | Studio |
 | 249 | Receipt Route | Studio |
 | 250 | Recurring Review | Studio |
-| 251 | Renewal Radar | Studio |
+| 251 | QR Forge | Studio |
 | 252 | ResearchGrid | Studio |
 | 253 | Rest Rhythm | Studio |
 | 254 | Resume Context | Studio |
 | 255 | ReturnReady | Studio |
-| 256 | Risk Roundup | Studio |
+| 256 | Session Snapshot | Studio |
 | 257 | Role Brief | Studio |
 | 258 | Route Receipt | Studio |
 | 259 | RouteBackup | Studio |
@@ -1366,12 +1366,12 @@ sequenceDiagram
 - **Calls:** marked.js from `cdn.jsdelivr.net/npm/marked` rendered through DOMPurify; FlexSearch for instant local search
 - **Done when:** markdown preview renders sanitized and search across 1k notes returns in under 50ms
 
-### 109. Release Radar - Accelerator
-- **What:** The go call has a name on it What ships, what is held, the rollback.
-- **How:** Add a `release` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the release-radar-fifth100 unlock.
+### 109. Print Perfect - Accelerator
+- **What:** Ink spent on purpose Strip the clutter, keep the content, prove the proof.
+- **How:** Add a `print` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the print-perfect-new15 unlock.
 - **Needed:** browser-standard APIs plus the portfolio chassis (storage, gates, scoring, export); icons from Lucide (ISC); no paid service required.
-- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_releaseradar_records` with a `status` index)
-- **Files:** `popup/modules/releaseradar.js` (engine), `popup/views/releaseradar-records.js` and `popup/views/releaseradar-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
+- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_printperfectnew15_records` with a `status` index)
+- **Files:** `popup/modules/printperfectnew15.js` (engine), `popup/views/printperfectnew15-records.js` and `popup/views/printperfectnew15-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
 - **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
 - **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
@@ -1384,14 +1384,14 @@ sequenceDiagram
 - **Calls:** Leaflet 1.9 from `unpkg.com/leaflet` with OpenStreetMap tiles (attribution only); geocode via `nominatim.openstreetmap.org/search?format=json&q=` at max 1 req/s, results cached locally
 - **Done when:** saved places render as pins and repeat views cost zero geocode requests because of the cache
 
-### 111. Redirect Route - Accelerator
-- **What:** Old URLs land somewhere new Mapping, status code, chain check.
-- **How:** Add a `redirect` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the redirect-route-sixth100 unlock.
-- **Needed:** OpenStreetMap tiles + Leaflet.js (BSD) + Nominatim geocoding (free, attribution only).
-- **Data model:** `{ id, name, lat, lon, notes, visited_at }` in store `places` (WP: `wp_redirectroute_places`)
-- **Files:** `popup/modules/redirectroute.js` (engine), `popup/views/redirectroute-records.js` and `popup/views/redirectroute-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
-- **Calls:** Leaflet 1.9 from `unpkg.com/leaflet` with OpenStreetMap tiles (attribution only); geocode via `nominatim.openstreetmap.org/search?format=json&q=` at max 1 req/s, results cached locally
-- **Done when:** saved places render as pins and repeat views cost zero geocode requests because of the cache
+### 111. Table Siphon - Accelerator
+- **What:** The table, off the page Rows and columns landed clean in CSV, JSON, or Markdown.
+- **How:** Add a `table` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the table-siphon-new15 unlock.
+- **Needed:** browser-standard APIs plus the portfolio chassis (storage, gates, scoring, export); icons from Lucide (ISC); no paid service required.
+- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_tablesiphonnew15_records` with a `status` index)
+- **Files:** `popup/modules/tablesiphonnew15.js` (engine), `popup/views/tablesiphonnew15-records.js` and `popup/views/tablesiphonnew15-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
+- **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
+- **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
 ### 112. Runtime Radar - Accelerator
 - **What:** The right-size call, made Usage trends and anomalies on radar.
@@ -1465,14 +1465,14 @@ sequenceDiagram
 - **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
 - **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
-### 121. ColorToken - Accelerator
-- **What:** Name colors once, use them everywhere Contrast checked on every token.
-- **How:** Add a `colortoken` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the colortoken-alternatives unlock.
-- **Needed:** browser-standard APIs plus the portfolio chassis (storage, gates, scoring, export); icons from Lucide (ISC); no paid service required.
-- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_colortoken_records` with a `status` index)
-- **Files:** `popup/modules/colortoken.js` (engine), `popup/views/colortoken-records.js` and `popup/views/colortoken-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
-- **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
-- **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
+### 121. Video Speed Deck - Accelerator
+- **What:** Your speed, remembered Per-site rates and shortcuts, with a proven ceiling.
+- **How:** Add a `video` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the video-speed-deck-new15 unlock.
+- **Needed:** MediaRecorder API built in; ffmpeg.wasm for trims; no paid service.
+- **Data model:** `{ id, title, blob_ref, duration_s, chapters: [], created_at }` in store `videos` (WP: `wp_videospeeddecknew15_videos`)
+- **Files:** `popup/modules/videospeeddecknew15.js` (engine), `popup/views/videospeeddecknew15-records.js` and `popup/views/videospeeddecknew15-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
+- **Calls:** MediaRecorder (`video/webm`) built in; ffmpeg.wasm for webm-to-mp4; chapter marks stored as plain JSON
+- **Done when:** a 2-minute capture exports mp4 under 20MB and chapters jump correctly in the built-in player
 
 ### 122. ViewportNote - Accelerator
 - **What:** Notes pinned to the exact screen size Responsive bugs stop slipping through.
@@ -1573,14 +1573,14 @@ sequenceDiagram
 - **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
 - **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
-### 133. ImageAlt Check - Accelerator
-- **What:** Alt text, reviewed like a pro Presence, quality, the fixes that matter.
-- **How:** Add a `imagealt` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the imagealt-check-alternatives unlock.
-- **Needed:** Canvas API + browser-image-compression (MIT); icons from Heroicons/Lucide (MIT/ISC).
-- **Data model:** `{ id, name, blob_ref, w, h, tags: [], created_at }` in store `images` (WP: `wp_imagealtcheck_images`)
-- **Files:** `popup/modules/imagealtcheck.js` (engine), `popup/views/imagealtcheck-records.js` and `popup/views/imagealtcheck-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
-- **Calls:** browser-image-compression from `cdn.jsdelivr.net/npm/browser-image-compression`: `imageCompression(file,{maxSizeMB:1})`; Canvas API for crops; Lucide icons (ISC)
-- **Done when:** a 5MB photo stores under 1MB and the thumbnail grid renders without jank
+### 133. Emoji Chest - Accelerator
+- **What:** Your words, your emoji Search words you actually type, tones you actually mean.
+- **How:** Add a `emoji` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the emoji-chest-new15 unlock.
+- **Needed:** browser-standard APIs plus the portfolio chassis (storage, gates, scoring, export); icons from Lucide (ISC); no paid service required.
+- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_emojichestnew15_records` with a `status` index)
+- **Files:** `popup/modules/emojichestnew15.js` (engine), `popup/views/emojichestnew15-records.js` and `popup/views/emojichestnew15-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
+- **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
+- **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
 ### 134. Alt Text Desk - Accelerator
 - **What:** Alt text that clears a real quality bar "Image of" is not a description.
@@ -1600,14 +1600,14 @@ sequenceDiagram
 - **Calls:** heuristic engine ships by default so the feature works keyless; optional user-supplied OpenRouter free-model key POST `openrouter.ai/api/v1/chat/completions`, stored locally only
 - **Done when:** the feature is fully usable with no key, and adding one swaps the engine label in the UI
 
-### 136. Cookie Ledger - Accelerator
-- **What:** Does it survive the purge Who owns it, what it tracks.
-- **How:** Add a `cookie` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the cookie-ledger-fifth100 unlock.
-- **Needed:** Web Crypto API built in; HaveIBeenPwned k-anonymity range API (free) for breach checks.
-- **Data model:** `{ id, label, hash, verdict, detail, checked_at }` in store `checks` (WP: `wp_cookieledger_checks`)
-- **Files:** `popup/modules/cookieledger.js` (engine), `popup/views/cookieledger-records.js` and `popup/views/cookieledger-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
-- **Calls:** Web Crypto `crypto.subtle.digest('SHA-1',bytes)`; breach check via the HIBP range API `api.pwnedpasswords.com/range/{prefix}` - k-anonymity, free, no key
-- **Done when:** the verdict returns from a 5-char hash prefix and the full secret never leaves the device
+### 136. Tab Snooze - Accelerator
+- **What:** Later, on time Snooze the tab; it wakes when you actually need it.
+- **How:** Add a `tab` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the tab-snooze-new15 unlock.
+- **Needed:** browser-standard APIs plus the portfolio chassis (storage, gates, scoring, export); icons from Lucide (ISC); no paid service required.
+- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_tabsnoozenew15_records` with a `status` index)
+- **Files:** `popup/modules/tabsnoozenew15.js` (engine), `popup/views/tabsnoozenew15-records.js` and `popup/views/tabsnoozenew15-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
+- **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
+- **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
 ### 137. Cookie Purpose - Accelerator
 - **What:** Every cookie explains itself Consent law gets the final say.
@@ -1672,14 +1672,14 @@ sequenceDiagram
 - **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
 - **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
-### 144. PermissionProof - Accelerator
-- **What:** Exactly the access it needs The excess gets trimmed on record.
-- **How:** Add a `permissionproof` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the permissionproof-third30 unlock.
-- **Needed:** Web Share API built in; no paid widgets.
-- **Data model:** `{ id, quote, author, source_url, rating, collected_at }` in store `proofs` (WP: `wp_permissionproof_proofs`)
-- **Files:** `popup/modules/permissionproof.js` (engine), `popup/views/permissionproof-records.js` and `popup/views/permissionproof-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
-- **Calls:** Web Share API `navigator.share({title,text,url})`; 1200x630 OG-style card rendered on Canvas and downloaded as PNG; no paid widgets
-- **Done when:** the native share sheet opens on mobile and the proof card PNG downloads at exactly 1200x630
+### 144. Highlight Reel - Accelerator
+- **What:** Research that survives the tab Passages, notes, and color codes that export clean.
+- **How:** Add a `highlight` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the highlight-reel-new15 unlock.
+- **Needed:** browser-standard APIs plus the portfolio chassis (storage, gates, scoring, export); icons from Lucide (ISC); no paid service required.
+- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_highlightreelnew15_records` with a `status` index)
+- **Files:** `popup/modules/highlightreelnew15.js` (engine), `popup/views/highlightreelnew15-records.js` and `popup/views/highlightreelnew15-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
+- **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
+- **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
 ### 145. Login Ledger - Accelerator
 - **What:** The recovery path, before you need it Account, 2FA state, last checked.
@@ -1798,12 +1798,12 @@ sequenceDiagram
 - **Calls:** marked.js from `cdn.jsdelivr.net/npm/marked` rendered through DOMPurify; FlexSearch for instant local search
 - **Done when:** markdown preview renders sanitized and search across 1k notes returns in under 50ms
 
-### 158. Schema Cue - Accelerator
-- **What:** The rich-result test passes Type, required fields, errors found.
-- **How:** Add a `schema` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the schema-cue-sixth100 unlock.
+### 158. Font Spotter - Accelerator
+- **What:** That font has a name Spot it, stack it, license it, keep it.
+- **How:** Add a `font` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the font-spotter-new15 unlock.
 - **Needed:** browser-standard APIs plus the portfolio chassis (storage, gates, scoring, export); icons from Lucide (ISC); no paid service required.
-- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_schemacue_records` with a `status` index)
-- **Files:** `popup/modules/schemacue.js` (engine), `popup/views/schemacue-records.js` and `popup/views/schemacue-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
+- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_fontspotternew15_records` with a `status` index)
+- **Files:** `popup/modules/fontspotternew15.js` (engine), `popup/views/fontspotternew15-records.js` and `popup/views/fontspotternew15-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
 - **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
 - **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
@@ -2635,12 +2635,12 @@ sequenceDiagram
 - **Calls:** Web Share API `navigator.share({title,text,url})`; 1200x630 OG-style card rendered on Canvas and downloaded as PNG; no paid widgets
 - **Done when:** the native share sheet opens on mobile and the proof card PNG downloads at exactly 1200x630
 
-### 251. Renewal Radar - Studio
-- **What:** The decision date beats the auto-renew Notice windows spotted early.
-- **How:** Add a `renewal` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the renewal-radar-sixth100 unlock.
+### 251. QR Forge - Studio
+- **What:** Print it once, scan it forever Payload, margin, size, and the scan test that proves it.
+- **How:** Add a `qr` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the qr-forge-new15 unlock.
 - **Needed:** browser-standard APIs plus the portfolio chassis (storage, gates, scoring, export); icons from Lucide (ISC); no paid service required.
-- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_renewalradar_records` with a `status` index)
-- **Files:** `popup/modules/renewalradar.js` (engine), `popup/views/renewalradar-records.js` and `popup/views/renewalradar-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
+- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_qrforgenew15_records` with a `status` index)
+- **Files:** `popup/modules/qrforgenew15.js` (engine), `popup/views/qrforgenew15-records.js` and `popup/views/qrforgenew15-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
 - **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
 - **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
@@ -2680,12 +2680,12 @@ sequenceDiagram
 - **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
 - **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
-### 256. Risk Roundup - Studio
-- **What:** Round them up first Likelihood, blast, mitigation, owner.
-- **How:** Add a `risk` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the risk-roundup-sixth100 unlock.
+### 256. Session Snapshot - Studio
+- **What:** Monday-you says thanks The whole window set, restored in one click.
+- **How:** Add a `session` module beside the existing engine (same storage, gates, and export patterns this product already uses), wire one Records view and one New form, reuse the tier gate for the session-snapshot-new15 unlock.
 - **Needed:** browser-standard APIs plus the portfolio chassis (storage, gates, scoring, export); icons from Lucide (ISC); no paid service required.
-- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_riskroundup_records` with a `status` index)
-- **Files:** `popup/modules/riskroundup.js` (engine), `popup/views/riskroundup-records.js` and `popup/views/riskroundup-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
+- **Data model:** `{ id, title, status, payload_json, created_at, updated_at }` in an IndexedDB store named for the module (WP: table `wp_sessionsnapshotnew15_records` with a `status` index)
+- **Files:** `popup/modules/sessionsnapshotnew15.js` (engine), `popup/views/sessionsnapshotnew15-records.js` and `popup/views/sessionsnapshotnew15-new.js` (views), reusing `lib/storage.js`, `lib/gates.js`, `lib/export.js`; register the module in `popup/manifest.js`
 - **Calls:** browser-standard APIs plus the portfolio chassis (`lib/storage.js`, gates, scoring, export); icons from Lucide (ISC); no paid service required
 - **Done when:** create / list / edit / export all round-trip, and the gate flips green only when the record is real
 
